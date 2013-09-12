@@ -121,6 +121,7 @@
         } else {
           options.percent = upercent - ((seconds / tseconds) * upercent);
 
+          $(this).trigger('pietimer-tick', Math.round(seconds/1000), Math.round(tseconds/1000));
           $(this).pietimer('draw', options);
         }
       }.bind(this), 50);
